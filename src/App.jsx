@@ -3,7 +3,6 @@ import {
 	Routes,
 	Route,
 } from "react-router-dom";
-
 import { useState, useEffect } from "react";
 
 import Product from "./pages/Product";
@@ -13,6 +12,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
 import AppLayout from "./pages/AppLayout";
 import CityList from "./components/CityList";
+import CountryList from "./components/CountryList";
 
 const BASE_URL = "http://localhost:3001";
 
@@ -74,7 +74,12 @@ function App() {
 					/>
 					<Route
 						path="countries"
-						element={<p>List of countries</p>}
+						element={
+							<CountryList
+								cities={cities}
+								isLoading={isLoading}
+							/>
+						}
 					/>
 					<Route
 						path="form"
