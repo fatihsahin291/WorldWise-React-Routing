@@ -2,6 +2,7 @@ import {
 	BrowserRouter,
 	Routes,
 	Route,
+	Navigate,
 } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -59,10 +60,7 @@ function App() {
 					<Route
 						index
 						element={
-							<CityList
-								isLoading={isLoading}
-								cities={cities}
-							/>
+							<Navigate replace to="cities" />
 						}
 					/>
 					<Route
