@@ -9,6 +9,7 @@ import Pricing from "./pages/Pricing";
 import Homepage from "./pages/Homepage";
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
+import AppLayout from "./pages/AppLayout";
 
 function App() {
 	return (
@@ -24,6 +25,20 @@ function App() {
 					element={<Pricing />}
 				/>
 				<Route path="login" element={<Login />} />
+				<Route path="app" element={<AppLayout />}>
+					<Route
+						path="cities"
+						element={<p>sssssssssssssssss</p>}
+					/>
+					<Route
+						path="countries"
+						element={<p>sssssssssssssssss</p>}
+					/>
+					<Route
+						path="form"
+						element={<p>sssssssssssssssss</p>}
+					/>
+				</Route>
 				<Route
 					path="*"
 					element={<PageNotFound />}
