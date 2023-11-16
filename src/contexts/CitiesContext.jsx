@@ -40,6 +40,7 @@ function reducer(state, action) {
 				...state,
 				isLoading: false,
 				cities: [...state.cities, action.payload],
+				currentCity: action.payload,
 			};
 		case "city/deleted":
 			return {
@@ -48,6 +49,7 @@ function reducer(state, action) {
 				cities: state.cities.filter(
 					(city) => city.id !== action.payload
 				),
+				currentCity: {},
 			};
 		case "rejected":
 			return {
@@ -101,6 +103,9 @@ function CitiesProvider({ children }) {
 	}, []);
 
 	async function getCity(id) {
+		console.log(id, currentCity.id);
+		if (Number(id) === currentCity.id) return;
+
 		dispatch({ type: "loading" });
 		try {
 			const res = await fetch(
@@ -181,6 +186,7 @@ function CitiesProvider({ children }) {
 				cities,
 				isLoading,
 				currentCity,
+				error,
 				getCity,
 				createCity,
 				deleteCity,
