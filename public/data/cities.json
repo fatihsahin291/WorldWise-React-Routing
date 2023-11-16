@@ -35,54 +35,6 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
-    },
-    {
-      "cityName": "Milton Keynes",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "emoji": "🇬🇧",
-      "date": "2023-11-16T16:54:20.709Z",
-      "notes": "sss",
-      "position": {
-        "lat": "52.04570040744752",
-        "lng": "-0.7333374023437501"
-      },
-      "id": 98443198
-    },
-    {
-      "cityName": "Sines",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2023-11-16T16:58:58.843Z",
-      "notes": "ddd",
-      "position": {
-        "lat": "37.92656807847797",
-        "lng": "-8.854980468750002"
-      },
-      "id": 98443199
-    },
-    {
-      "cityName": "Oxford",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "emoji": "🇬🇧",
-      "date": "2023-11-16T17:02:32.299Z",
-      "notes": "www",
-      "position": {
-        "lat": "51.74716092755941",
-        "lng": "-1.2414550781250002"
-      },
-      "id": 98443200
-    },
-    {
-      "cityName": "Chichester",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "emoji": "🇬🇧",
-      "date": "2023-11-16T17:05:49.512Z",
-      "notes": "vvvvvv",
-      "position": {
-        "lat": "50.8298688330361",
-        "lng": "-0.7690429687500001"
-      },
-      "id": 98443201
     }
   ]
 }
