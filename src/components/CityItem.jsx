@@ -11,7 +11,6 @@ const formatDate = (date) =>
 
 function CityItem({ city }) {
 	const { currentCity } = useCities();
-	console.log(currentCity);
 
 	return (
 		<li>
