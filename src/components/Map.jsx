@@ -16,7 +16,6 @@ import { useURLPosition } from "../hooks/useuRLPosition";
 import Button from "./Button";
 
 function Map() {
-	const navigate = useNavigate();
 	const { cities } = useCities();
 	const [mapPosition, setMapPosition] = useState([
 		51.505, 0,
