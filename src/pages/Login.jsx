@@ -4,6 +4,7 @@ import styles from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuth } from "../contexts/FakeAuthContext";
+import Button from "../components/Button";
 
 export default function Login() {
 	// PRE-FILL FOR DEV PURPOSES
@@ -16,25 +17,28 @@ export default function Login() {
 	const { login, isAuthenticated } = useAuth();
 	const navigate = useNavigate();
 
-	useEffect(
-		() => {
-			if (isAuthenticated) {
-				navigate("/app");
-			}
-		},
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[isAuthenticated]
-	);
+	useEffect(() => {
+		if (isAuthenticated) {
+			navigate("/app/cities", { replace: true });
+		}
+	}, [isAuthenticated, navigate]);
+
+	function handleSubmit(e) {
+		e.preventDefault();
+
+		if (!email || !password)
+			return alert(
+				"Please enter email and password"
+			);
+		login(email, password);
+	}
 
 	return (
 		<main className={styles.login}>
 			<PageNav />
 			<form
 				className={styles.form}
-				onSubmit={(e) => {
-					e.preventDefault();
-					login(email, password);
-				}}
+				onSubmit={(e) => handleSubmit(e)}
 			>
 				<div className={styles.row}>
 					<label htmlFor="email">
@@ -65,7 +69,7 @@ export default function Login() {
 				</div>
 
 				<div>
-					<button>Login</button>
+					<Button type="primary">Login</Button>
 				</div>
 			</form>
 		</main>
