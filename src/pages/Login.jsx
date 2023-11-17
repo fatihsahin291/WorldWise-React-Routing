@@ -1,6 +1,9 @@
 import PageNav from "../components/PageNav";
 import styles from "./Login.module.css";
-import { useState } from "react";
+
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useAuth } from "../contexts/FakeAuthContext";
 
 export default function Login() {
 	// PRE-FILL FOR DEV PURPOSES
@@ -10,10 +13,29 @@ export default function Login() {
 	const [password, setPassword] =
 		useState("qwerty");
 
+	const { login, isAuthenticated } = useAuth();
+	const navigate = useNavigate();
+
+	useEffect(
+		() => {
+			if (isAuthenticated) {
+				navigate("/app");
+			}
+		},
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		[isAuthenticated]
+	);
+
 	return (
 		<main className={styles.login}>
 			<PageNav />
-			<form className={styles.form}>
+			<form
+				className={styles.form}
+				onSubmit={(e) => {
+					e.preventDefault();
+					login(email, password);
+				}}
+			>
 				<div className={styles.row}>
 					<label htmlFor="email">
 						Email address
